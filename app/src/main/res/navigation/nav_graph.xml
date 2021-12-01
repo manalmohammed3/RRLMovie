@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/overViewFragment">
+
+    <fragment
+        android:id="@+id/overViewDetailFragment"
+        android:name="com.example.rrlmovie.overview.OverViewDetailFragment"
+        android:label="Movi Info"
+        tools:layout="@layout/fragment_over_view_detail" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_overViewDetailFragment_to_overViewFragment2"
+            app:destination="@id/overViewFragment"
+            app:exitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/overViewFragment"
+        android:name="com.example.rrlmovie.overview.OverViewFragment"
+        android:label="Movie" >
+        <action
+            android:id="@+id/action_overViewFragment_to_overViewDetailFragment"
+            app:destination="@id/overViewDetailFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim" />
+    </fragment>
+</navigation>
